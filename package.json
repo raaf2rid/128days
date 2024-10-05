@@ -2,11 +2,11 @@
   "name": "wedding-countdown",
   "version": "1.0.0",
   "description": "A wedding countdown with OpenAI-generated messages",
-  "main": "api/server.js",  
+  "main": "api/wedding-message.js",  
   "type": "module",
   "scripts": {
-    "start": "node api/server.js",  
-    "dev": "nodemon api/server.js"  
+    "start": "node api/wedding-message.js",  
+    "dev": "nodemon api/wedding-message.js"  
   },
   "dependencies": {
     "dotenv": "^16.4.5",
