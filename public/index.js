@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log("DOM fully loaded, fetching message...");
 
   // Fetch the wedding message from the backend
-  fetch('/wedding-message')
+  fetch('/api/wedding-message')
     .then(response => response.json())
     .then(data => {
       // Call the typing effect function with the message
