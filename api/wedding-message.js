@@ -36,47 +36,59 @@ function getCurrentTimeOfDay() {
   }
 }
 
+function getRandomNickname() {
+  const names = ['Mayabi Komolota', 'Plaabonnyo', 'Saki'];
+  const randomIndex = Math.floor(Math.random() * names.length);
+  return names[randomIndex];
+}
+
 function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   const timeOfDay = getCurrentTimeOfDay();
+  const nickname = getRandomNickname();
 
   if (timeOfDay === "morning") {
     return `
-      Write a short, loving message from Rafi to Saki, under 50 words. 
-      Mention how Saki sleeps early and how they often fight about it. 
-      Rafi calls Saki 'Mayabi Komolota' and 'Plaabonnyo' as nicknames. 
+      Write a short, loving message from Rafi to ${nickname}, under 50 words. 
+      Do not use possessive terms like 'my' or add words like 'dear.' 
+      Mention how ${nickname} sleeps early, and how they often fight about it. 
       End with the phrase "And lastly, Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
-      Make it funny, light, and affectionate with a morning vibe
+      Make it funny, light, and affectionate with a morning vibe.
     `;
   } else if (timeOfDay === "afternoon") {
     return `
-      Write a playful, sweet message from Rafi to Saki, under 50 words. 
-      Mention how Saki sleeps early, and Rafi is waiting to talk with her later. 
-      Rafi calls Saki 'Mayabi Komolota' and 'Plaabonnyo' as loving nicknames. 
-      Include the line "O Plabonnyo, Apni dekhte Prochondo Beautiful."
+      Write a playful, sweet message from Rafi to ${nickname}, under 50 words. 
+      Do not use possessive terms or words like 'dear.' 
+      Mention how ${nickname} sleeps early, and Rafi is waiting to talk with her later. 
+      Include the line "O ${nickname}, Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
-      Keep the tone playful and affectionate with an afternoon feel
+      Keep the tone playful and affectionate with an afternoon feel.
     `;
   } else if (timeOfDay === "evening") {
     return `
-      Write a warm, loving message from Rafi to Saki, under 50 words. 
-      Mention how Saki will sleep soon, and Rafi wishes they could talk all night. 
-      Rafi calls Saki 'Mayabi Komolota' and 'Plaabonnyo' as loving nicknames. 
+      Write a warm, loving message from Rafi to ${nickname}, under 50 words. 
+      Do not use possessive terms or words like 'dear.' 
+      Mention how ${nickname} will sleep soon, and Rafi wishes they could talk all night. 
       Use the line "I will never stop saying that Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
-      Make it romantic and thoughtful with an evening feel
+      Make it romantic and thoughtful with an evening feel.
     `;
   } else {
     return `
-      Write a sweet, late-night message from Rafi to Saki, under 50 words. 
-      Mention how Rafi is staying up late thinking about their future together, while Saki has gone to bed early. 
-      Rafi calls Saki 'Mayabi Komolota' and 'Plaabonnyo' as loving nicknames. 
+      Write a sweet, late-night message from Rafi to ${nickname}, under 50 words. 
+      Do not use possessive terms or words like 'dear.' 
+      Mention how Rafi is staying up late thinking about their future together, while ${nickname} has gone to bed early. 
       End the message with "R haa... Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
-      Make it dreamy and romantic with a late-night tone
+      Make it dreamy and romantic with a late-night tone.
     `;
   }
 }
+
+
+
+
+
 
 
 // Function to generate a wedding message using OpenAI's chat completion API
