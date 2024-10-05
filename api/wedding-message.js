@@ -23,10 +23,65 @@ function calculateDaysLeft() {
   return Math.ceil(timeRemaining / (1000 * 60 * 60 * 24)); // Convert to days
 }
 
+function getCurrentTimeOfDay() {
+  const hour = new Date().getHours();
+  if (hour >= 5 && hour < 12) {
+    return "morning";
+  } else if (hour >= 12 && hour < 17) {
+    return "afternoon";
+  } else if (hour >= 17 && hour < 22) {
+    return "evening";
+  } else {
+    return "late night";
+  }
+}
+
+function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
+  const timeOfDay = getCurrentTimeOfDay();
+
+  if (timeOfDay === "morning") {
+    return `
+      Write a short, loving message from Rafi to Saki, under 50 words. 
+      Mention how Saki sleeps early and how they often fight about it. 
+      Rafi calls Saki 'Mayabi Komolota' and 'Plaabonnyo' as nicknames. 
+      End with the phrase "And lastly, Apni dekhte Prochondo Beautiful."
+      Also mention there are ${daysLeft} days left until their wedding. 
+      Make it funny, light, and affectionate with a morning vibe
+    `;
+  } else if (timeOfDay === "afternoon") {
+    return `
+      Write a playful, sweet message from Rafi to Saki, under 50 words. 
+      Mention how Saki sleeps early, and Rafi is waiting to talk with her later. 
+      Rafi calls Saki 'Mayabi Komolota' and 'Plaabonnyo' as loving nicknames. 
+      Include the line "O Plabonnyo, Apni dekhte Prochondo Beautiful."
+      Also mention there are ${daysLeft} days left until their wedding. 
+      Keep the tone playful and affectionate with an afternoon feel
+    `;
+  } else if (timeOfDay === "evening") {
+    return `
+      Write a warm, loving message from Rafi to Saki, under 50 words. 
+      Mention how Saki will sleep soon, and Rafi wishes they could talk all night. 
+      Rafi calls Saki 'Mayabi Komolota' and 'Plaabonnyo' as loving nicknames. 
+      Use the line "I will never stop saying that Apni dekhte Prochondo Beautiful."
+      Also mention there are ${daysLeft} days left until their wedding. 
+      Make it romantic and thoughtful with an evening feel
+    `;
+  } else {
+    return `
+      Write a sweet, late-night message from Rafi to Saki, under 50 words. 
+      Mention how Rafi is staying up late thinking about their future together, while Saki has gone to bed early. 
+      Rafi calls Saki 'Mayabi Komolota' and 'Plaabonnyo' as loving nicknames. 
+      End the message with "R haa... Apni dekhte Prochondo Beautiful."
+      Also mention there are ${daysLeft} days left until their wedding. 
+      Make it dreamy and romantic with a late-night tone
+    `;
+  }
+}
+
+
 // Function to generate a wedding message using OpenAI's chat completion API
 async function generateMessage(daysLeft) {
-  const prompt = `Write a short, sweet, and romantic letter from Rafi to Saki, mentioning how many days are left until their wedding on February 10, 2025. Use ${daysLeft} to indicate the number of days left. Each message should focus on one or two memories or inside jokes from their relationship, such as how they started talking on Instagram and switched to WhatsApp, their trip to Naval, the red saree Rafi gave her, Rafi waiting for her during job interviews, or how Saki is always removing his blackheads. Incorporate Rafi's nicknames for Saki, 'Mayabi Komolota' and 'Plaabonnyo'. Include the significant line 'Apni dekhte prochondo beautiful.' Keep references to the fact that they still argue about Saki's early bedtime in the present tense. The tone should be lighthearted, funny, and romantic. Keep the message short and sweet (under 30 words), and don’t include a full stop at the end.`;
-
+  const prompt = generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft)
   try {
     const completion = await openai.chat.completions.create({
       model: 'gpt-4', // Make sure to use the correct model (e.g., 'gpt-4' or 'gpt-3.5-turbo')
