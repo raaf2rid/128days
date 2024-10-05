@@ -43,7 +43,7 @@ async function generateMessage(daysLeft) {
 }
 
 // API endpoint to serve the wedding message
-app.get('/wedding-message', async (req, res) => {
+app.get('/api/wedding-message', async (req, res) => {
   const daysLeft = calculateDaysLeft();
   const message = await generateMessage(daysLeft);
 
