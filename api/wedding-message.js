@@ -49,12 +49,12 @@ function getRandomNickname() {
 function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   const timeOfDay = getCurrentTimeOfDay();
   const nickname = getRandomNickname();
-  const randomTopic = getRandomTopic(); // Choose between early sleep, future travels, wedding anticipation, etc.
+  const randomTopic = getRandomTopic(); // Adds variety to the message
 
   if (timeOfDay === "morning") {
     return `
       Write a short, loving message from Rafi to ${nickname}, under 50 words. 
-      Do not use possessive terms like 'my' or add words like 'dear.' 
+      Do not use possessive terms like 'my,' or add words like 'dear' or 'Hey.' 
       ${randomTopic}
       End with the phrase "And lastly, Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
@@ -63,7 +63,7 @@ function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   } else if (timeOfDay === "afternoon") {
     return `
       Write a playful, sweet message from Rafi to ${nickname}, under 50 words. 
-      Do not use possessive terms or words like 'dear.' 
+      Do not use possessive terms or casual greetings like 'Hey,' or words like 'dear.' 
       ${randomTopic}
       Include the line "O ${nickname}, Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
@@ -72,7 +72,7 @@ function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   } else if (timeOfDay === "evening") {
     return `
       Write a warm, loving message from Rafi to ${nickname}, under 50 words. 
-      Do not use possessive terms or words like 'dear.' 
+      Do not use possessive terms or casual greetings like 'Hey,' or words like 'dear.' 
       ${randomTopic}
       Use the line "I will never stop saying that Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
@@ -81,7 +81,7 @@ function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   } else {
     return `
       Write a sweet, late-night message from Rafi to ${nickname}, under 50 words. 
-      Do not use possessive terms or words like 'dear.' 
+      Do not use possessive terms or casual greetings like 'Hey,' or words like 'dear.' 
       ${randomTopic}
       End the message with "R haa... Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
