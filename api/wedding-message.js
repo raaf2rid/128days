@@ -102,7 +102,7 @@ function getRandomTopic() {
     "Her skincare obsession is something we joke about, but she takes it seriously.",
     "It's so painful when she removes my blackheads, but I let her do it.",
     "I miss her old way of wearing the hijab; it had a unique charm.",
-    "I want to spend two years alone with her before we become parents. Two years of love, adventure, and togetherness.",
+    "I want to spend two years alone with her before we become parents.",
     "Being alone at night devastates me. I can't wait for the day when she will live with me, and I’ll be able to cuddle her every night.",
     "I will wait for her again, like I did when she was at her Kenpark and Jay Jay Mills interviews.",
     "I’ll stand with two hawai mithai in hand, waiting for her, just like before.",
