@@ -100,7 +100,7 @@ async function generateMessage(daysLeft) {
   const prompt = generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft)
   try {
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4', // Make sure to use the correct model (e.g., 'gpt-4' or 'gpt-3.5-turbo')
+      model: 'gpt-4o-mini-2024-07-18',
       messages: [{ role: 'user', content: prompt }]
     });
 
