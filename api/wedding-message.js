@@ -24,7 +24,10 @@ function calculateDaysLeft() {
 }
 
 function getCurrentTimeOfDay() {
-  const hour = new Date().getHours();
+  const now = new Date();
+  const bdTime = new Date(now.getTime() + (6 * 60 * 60 * 1000)); // Adjusting for UTC+6
+  const hour = bdTime.getUTCHours(); // Getting hours in the adjusted timezone
+
   if (hour >= 5 && hour < 12) {
     return "morning";
   } else if (hour >= 12 && hour < 17) {
@@ -35,6 +38,7 @@ function getCurrentTimeOfDay() {
     return "late night";
   }
 }
+
 
 function getRandomNickname() {
   const names = ['Mayabi Komolota', 'Plaabonnyo', 'Saki'];
