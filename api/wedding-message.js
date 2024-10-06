@@ -49,12 +49,13 @@ function getRandomNickname() {
 function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   const timeOfDay = getCurrentTimeOfDay();
   const nickname = getRandomNickname();
+  const randomTopic = getRandomTopic(); // Choose between early sleep, future travels, wedding anticipation, etc.
 
   if (timeOfDay === "morning") {
     return `
       Write a short, loving message from Rafi to ${nickname}, under 50 words. 
-      Do not use possessive terms like 'my,' casual greetings like 'Hey,' or add words like 'dear.' 
-      Mention how ${nickname} sleeps early, and how they often argue about it. 
+      Do not use possessive terms like 'my' or add words like 'dear.' 
+      ${randomTopic}
       End with the phrase "And lastly, Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
       Make it funny, light, and affectionate with a morning vibe.
@@ -62,8 +63,8 @@ function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   } else if (timeOfDay === "afternoon") {
     return `
       Write a playful, sweet message from Rafi to ${nickname}, under 50 words. 
-      Do not use possessive terms, casual greetings like 'Hey,' or words like 'dear.' 
-      Mention how ${nickname} sleeps early, and Rafi is waiting to talk with her later. 
+      Do not use possessive terms or words like 'dear.' 
+      ${randomTopic}
       Include the line "O ${nickname}, Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
       Keep the tone playful and affectionate with an afternoon feel.
@@ -71,8 +72,8 @@ function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   } else if (timeOfDay === "evening") {
     return `
       Write a warm, loving message from Rafi to ${nickname}, under 50 words. 
-      Do not use possessive terms, casual greetings like 'Hey,' or words like 'dear.' 
-      Mention how ${nickname} will sleep soon, and Rafi wishes they could talk all night. 
+      Do not use possessive terms or words like 'dear.' 
+      ${randomTopic}
       Use the line "I will never stop saying that Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
       Make it romantic and thoughtful with an evening feel.
@@ -80,8 +81,8 @@ function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   } else {
     return `
       Write a sweet, late-night message from Rafi to ${nickname}, under 50 words. 
-      Do not use possessive terms, casual greetings like 'Hey,' or words like 'dear.' 
-      Mention how Rafi is staying up late thinking about their future together, while ${nickname} has gone to bed early. 
+      Do not use possessive terms or words like 'dear.' 
+      ${randomTopic}
       End the message with "R haa... Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
       Make it dreamy and romantic with a late-night tone.
@@ -89,6 +90,29 @@ function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   }
 }
 
+// Helper function to add variety in topics
+function getRandomTopic() {
+  const topics = [
+    "She loves plants and trees. 🌿",
+    "She loves my music, and I can't wait to sing for her again. 🎶",
+    "I am waiting to see her in the red saree again. ❤️",
+    "Remember our early dates at DC Hill? Those were magical times. 🌄",
+    "We can't wait for Sadi to get married so we can start our journey together. 💍",
+    "I'll give her the Bala soon, I promise. 💫",
+    "Her skincare obsession makes me smile. 😄",
+    "It's painful when she removes my blackheads, but she makes me look good. 😂",
+    "I miss her old way of wearing hijab, it was beautiful. 🧕",
+    "I want two beautiful years together before we become parents. 👶",
+    "Being alone at night is tough... I can't wait to cuddle her every night. 🤗",
+    "I'll wait for her again, like I did during her Kenpark and Jay Jay Mills interviews. ⏳",
+    "I'll be standing with two hawai mithai just for her. 🍬",
+    "From Piccolo to Zocalo, our love has grown. ❤️",
+  ];
+
+  // Randomly pick a topic
+  const randomIndex = Math.floor(Math.random() * topics.length);
+  return topics[randomIndex];
+}
 
 
 // Function to generate a wedding message using OpenAI's chat completion API
