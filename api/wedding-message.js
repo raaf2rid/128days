@@ -93,26 +93,26 @@ function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
 // Helper function to add variety in topics
 function getRandomTopic() {
   const topics = [
-    "She loves plants and trees. 🌿",
-    "She loves my music, and I can't wait to sing for her again. 🎶",
-    "I am waiting to see her in the red saree again. ❤️",
-    "Remember our early dates at DC Hill? Those were magical times. 🌄",
-    "We can't wait for Sadi to get married so we can start our journey together. 💍",
-    "I'll give her the Bala soon, I promise. 💫",
-    "Her skincare obsession makes me smile. 😄",
-    "It's painful when she removes my blackheads, but she makes me look good. 😂",
-    "I miss her old way of wearing hijab, it was beautiful. 🧕",
-    "I want two beautiful years together before we become parents. 👶",
-    "Being alone at night is tough... I can't wait to cuddle her every night. 🤗",
-    "I'll wait for her again, like I did during her Kenpark and Jay Jay Mills interviews. ⏳",
-    "I'll be standing with two hawai mithai just for her. 🍬",
-    "From Piccolo to Zocalo, our love has grown. ❤️",
+    "She loves plants and trees, and I adore how she cares for them.",
+    "She is always captivated by my music, and I can’t wait to play another tune for her.",
+    "I am still waiting to see her in the red saree I gave her.",
+    "I remember our initial DC Hill dates, the way we connected there is unforgettable.",
+    "We can’t wait for Sadi to get married, so that we can tie the knot ourselves.",
+    "I'll give her the 'Bala' soon, she’s been waiting for it for so long.",
+    "Her skincare obsession is something we joke about, but she takes it seriously.",
+    "It's so painful when she removes my blackheads, but I let her do it.",
+    "I miss her old way of wearing the hijab; it had a unique charm.",
+    "I want to spend two years alone with her before we become parents. Two years of love, adventure, and togetherness.",
+    "Being alone at night devastates me. I can't wait for the day when she will live with me, and I’ll be able to cuddle her every night.",
+    "I will wait for her again, like I did when she was at her Kenpark and Jay Jay Mills interviews.",
+    "I’ll stand with two hawai mithai in hand, waiting for her, just like before.",
+    "From Piccolo to Zocalo, our love grew stronger with every moment."
   ];
 
-  // Randomly pick a topic
   const randomIndex = Math.floor(Math.random() * topics.length);
   return topics[randomIndex];
 }
+
 
 
 // Function to generate a wedding message using OpenAI's chat completion API
