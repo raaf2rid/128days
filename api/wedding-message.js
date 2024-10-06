@@ -53,8 +53,8 @@ function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   if (timeOfDay === "morning") {
     return `
       Write a short, loving message from Rafi to ${nickname}, under 50 words. 
-      Do not use possessive terms like 'my' or add words like 'dear.' 
-      Mention how ${nickname} sleeps early, and how they often fight about it. 
+      Do not use possessive terms like 'my,' casual greetings like 'Hey,' or add words like 'dear.' 
+      Mention how ${nickname} sleeps early, and how they often argue about it. 
       End with the phrase "And lastly, Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
       Make it funny, light, and affectionate with a morning vibe.
@@ -62,7 +62,7 @@ function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   } else if (timeOfDay === "afternoon") {
     return `
       Write a playful, sweet message from Rafi to ${nickname}, under 50 words. 
-      Do not use possessive terms or words like 'dear.' 
+      Do not use possessive terms, casual greetings like 'Hey,' or words like 'dear.' 
       Mention how ${nickname} sleeps early, and Rafi is waiting to talk with her later. 
       Include the line "O ${nickname}, Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
@@ -71,7 +71,7 @@ function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   } else if (timeOfDay === "evening") {
     return `
       Write a warm, loving message from Rafi to ${nickname}, under 50 words. 
-      Do not use possessive terms or words like 'dear.' 
+      Do not use possessive terms, casual greetings like 'Hey,' or words like 'dear.' 
       Mention how ${nickname} will sleep soon, and Rafi wishes they could talk all night. 
       Use the line "I will never stop saying that Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
@@ -80,7 +80,7 @@ function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
   } else {
     return `
       Write a sweet, late-night message from Rafi to ${nickname}, under 50 words. 
-      Do not use possessive terms or words like 'dear.' 
+      Do not use possessive terms, casual greetings like 'Hey,' or words like 'dear.' 
       Mention how Rafi is staying up late thinking about their future together, while ${nickname} has gone to bed early. 
       End the message with "R haa... Apni dekhte Prochondo Beautiful."
       Also mention there are ${daysLeft} days left until their wedding. 
@@ -88,10 +88,6 @@ function generateDynamicPromptBasedOnTimeAndDaysLeft(daysLeft) {
     `;
   }
 }
-
-
-
-
 
 
 
